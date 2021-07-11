@@ -33,6 +33,7 @@
     "body-parser": "^1.19.0",
     "bonjour": "^3.5.0",
     "boolbase": "^1.0.0",
+    "bootstrap": "^5.0.2",
     "brace-expansion": "^1.1.11",
     "braces": "^2.3.2",
     "browserslist": "^4.16.6",
@@ -380,7 +381,12 @@
     "yocto-queue": "^0.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
     "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.0.0",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"

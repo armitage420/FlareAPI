@@ -15,6 +15,7 @@
 
     <title>PostClone</title>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -45,6 +46,79 @@
         </div>
       </div>
     </nav>
+
+    <div class="container">
+      <div class="input-group flex-nowrap my-5">
+        <span class="input-group-text" id="addon-wrapping"
+          ><select class="form-select" aria-label="Default select example">
+            <option id="get" value="GET">GET</option>
+            <option id="post" value="POST">POST</option>
+          </select></span
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter your URL here"
+          aria-label="URL"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
+          <div class="col-sm-10 d-flex justify-content-start">
+            <div class="col-sm-5 form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="contentType"
+                id="JSON"
+                value="JSON"
+                checked
+              />
+              <label class="form-check-label" for="JSON"> JSON </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="contentType"
+                id="customParameters"
+                value="customParameters"
+              />
+              <label class="form-check-label" for="customParameters">
+                Custom Parameters
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div id="customParam">
+        <div class="form-row row">
+          <label for="parameter1" class="col-sm-2 col-form-label"
+            >Parameter 1</label
+          >
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="parameterKey1"
+              placeholder="Enter parameter key"
+            />
+          </div>
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="parameterValue1"
+              placeholder="Enter parameter value"
+            />
+          </div>
+          <button class="btn btn-primary col-sm-1">+</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

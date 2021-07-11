@@ -63,6 +63,7 @@ addParam.addEventListener("click", () => {
   for (item of deleteParam) {
     item.addEventListener("click", (e) => {
       e.target.parentElement.remove();
+      paramCount--;
     });
   }
 });
@@ -82,5 +83,6 @@ submit.addEventListener("click", () => {
       let value = document.getElementById("parameterValue" + i).value;
       data[key] = value;
     }
+    console.log({ data });
   }
 });

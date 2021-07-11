@@ -7,9 +7,12 @@ function getElementByString(string) {
   div.innerHTML = string;
   return div.firstElementChild.firstElementChild;
 }
-// Hide the custom parameter box in the beginning
-document.getElementById("customParam").style.display = "none";
-
+// Show the selected radio button in beginning
+if (document.getElementById("JSON").checked) {
+  document.getElementById("customParam").style.display = "none";
+} else {
+  document.getElementById("jsonRequest").style.display = "none";
+}
 // hide custom parameter and show json when json radio button is clicked
 document.getElementById("JSON").addEventListener("click", () => {
   document.getElementById("customParam").style.display = "none";

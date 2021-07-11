@@ -49,9 +49,18 @@ addParam.addEventListener("click", () => {
                             placeholder="Enter parameter value"
                             />
                         </div>
-                        <button class="btn btn-primary col-sm-1" id="addParam">-</button>
+                        <button class="btn btn-primary col-sm-1 deleteParam">-</button>
                     </div>
                 </div>`;
   let newElement = getElementByString(string);
-  document.getElementById("newParam").appendChild(newElement);
+  let param = document.getElementById("newParam");
+  param.appendChild(newElement);
+
+  let deleteParam = document.getElementsByClassName("deleteParam");
+  let item;
+  for (item of deleteParam) {
+    item.addEventListener("click", (e) => {
+      e.target.parentElement.remove();
+    });
+  }
 });

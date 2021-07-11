@@ -1,3 +1,4 @@
+import { Dropdown } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 console.log("working");
 // Utility functions
@@ -7,6 +8,7 @@ function getElementByString(string) {
   div.innerHTML = string;
   return div.firstElementChild.firstElementChild;
 }
+
 // Show the selected radio button in beginning
 if (document.getElementById("JSON").checked) {
   document.getElementById("customParam").style.display = "none";
@@ -62,5 +64,23 @@ addParam.addEventListener("click", () => {
     item.addEventListener("click", (e) => {
       e.target.parentElement.remove();
     });
+  }
+});
+
+let submit = document.getElementById("submit");
+submit.addEventListener("click", () => {
+  let url = document.getElementById("url").value;
+  let requestType = document.querySelector("#requestType").value;
+  let contentType = document.querySelector(
+    "input[name='contentType']:checked"
+  ).value;
+
+  if (contentType == "customParameters") {
+    const data = {};
+    for (let i = 1; i <= paramCount; i++) {
+      let key = document.getElementById("parameterKey" + i).value;
+      let value = document.getElementById("parameterValue" + i).value;
+      data[key] = value;
+    }
   }
 });

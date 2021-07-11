@@ -17,6 +17,7 @@
   </head>
 
   <body>
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">PostClone</a>
@@ -47,7 +48,9 @@
       </div>
     </nav>
 
+    <!-- main contents go here -->
     <div class="container">
+      <!-- ap request -->
       <div class="input-group flex-nowrap my-5">
         <span class="input-group-text" id="addon-wrapping"
           ><select class="form-select" aria-label="Default select example">
@@ -63,6 +66,8 @@
           aria-describedby="addon-wrapping"
         />
       </div>
+
+      <!-- content type -->
       <fieldset class="form-group">
         <div class="row">
           <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
@@ -94,6 +99,7 @@
         </div>
       </fieldset>
 
+      <!-- custom parameters box -->
       <div id="customParam">
         <div class="form-row row">
           <label for="parameter1" class="col-sm-2 col-form-label"
@@ -116,6 +122,28 @@
             />
           </div>
           <button class="btn btn-primary col-sm-1">+</button>
+        </div>
+      </div>
+
+      <!-- json input box -->
+      <div class="mb-3 row my-4" id="jsonRequest">
+        <label for="requestJsonText" class="col-sm-2 col-form-label"
+          >Request Body</label
+        >
+        <div class="col-sm-10">
+          <textarea
+            class="form-control"
+            id="requestJsonText"
+            rows="3"
+            placeholder="Enter request JSON here"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- submit button to fetch api -->
+      <div class="form-group row my-4 d-flex justify-content-end">
+        <div class="col-sm-1">
+          <button class="btn btn-primary" id="submit">Submit</button>
         </div>
       </div>
     </div>

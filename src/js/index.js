@@ -1,5 +1,7 @@
 import { Dropdown } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
+import { data } from "browserslist";
+
 console.log("working");
 // Utility functions
 // Get element from string
@@ -32,6 +34,7 @@ let paramCount = 1;
 let addParam = document.getElementById("addParam");
 addParam.addEventListener("click", () => {
   paramCount++;
+  console.log("add", paramCount);
   let string = `<div id="customParam">
                     <div class="form-row row my-4">
                         <label for="parameter1" class="col-sm-2 col-form-label">Parameter ${paramCount}</label>
@@ -62,9 +65,9 @@ addParam.addEventListener("click", () => {
   let item;
   for (item of deleteParam) {
     item.addEventListener("click", (e) => {
+      // console.log(e.target.parentElement);
       e.target.parentElement.remove();
     });
-    paramCount--;
   }
 });
 
@@ -76,14 +79,40 @@ submit.addEventListener("click", () => {
     "input[name='contentType']:checked"
   ).value;
 
+  let data;
   if (contentType == "customParameters") {
-    const data = {};
+    const dataRes = {};
     for (let i = 1; i <= paramCount; i++) {
-      let key = document.getElementById("parameterKey" + i).value;
-      let value = document.getElementById("parameterValue" + i).value;
-      data[key] = value;
+      if (document.getElementById("parameterKey" + i) != undefined) {
+        let key = document.getElementById("parameterKey" + i).value;
+        let value = document.getElementById("parameterValue" + i).value;
+        dataRes[key] = value;
+      }
     }
+    data = dataRes;
   } else {
-    const data = JSON.parse(document.getElementById("requestJsonText").value);
+    const dataRes = document.getElementById("requestJsonText").value;
+    data = dataRes;
+  }
+
+  if (requestType == "GET") {
+    fetch(url, { method: "GET" })
+      .then((response) => response.text())
+      .then((text) => {
+        document.getElementById("responseJsonText").value = text;
+      });
+  } else {
+    console.log(data);
+    fetch(url, {
+      method: "POST",
+      data: JSON.stringify(data),
+      // headers: {
+      //   "Content-type": "application/json; charset=UTF-8",
+      // },
+    })
+      .then((response) => response.text())
+      .then((text) => {
+        document.getElementById("responseJsonText").value = text;
+      });
   }
 });

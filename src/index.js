@@ -1,7 +1,4 @@
-import { Dropdown } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import { data } from "browserslist";
-
 console.log("working");
 // Utility functions
 // Get element from string

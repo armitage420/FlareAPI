@@ -1,5 +1,5 @@
 {
-  "name": "postman-clone",
+  "name": "FlareAPI",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/armitage420/postman-clone.git"
+    "url": "git+https://github.com/armitage420/FlareAPI.git"
   },
   "author": "Araika",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/armitage420/postman-clone/issues"
+    "url": "https://github.com/armitage420/FlareAPI/issues"
   },
-  "homepage": "https://github.com/armitage420/postman-clone#readme",
+  "homepage": "https://github.com/armitage420/FlareAPI#readme",
   "dependencies": {
     "bootstrap": "^5.0.2"
   },
